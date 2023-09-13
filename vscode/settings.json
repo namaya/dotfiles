@@ -1,22 +1,31 @@
 {
+    "terminal.integrated.inheritEnv": false,
+    "redhat.telemetry.enabled": false,
     "terminal.integrated.enableMultiLinePasteWarning": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.lineNumbers": "relative",
+    "editor.cursorSurroundingLines": 8,
+    // "editor.stickyScroll.defaultModel": ,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
     "[python]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "[rust]": {
-        "editor.formatOnType": true
-    },
-    "rust-analyzer.check.noDefaultFeatures": null,
-    "rust-analyzer.cargo.buildScripts.overrideCommand": null,
-    "editor.lineNumbers": "relative",
-    "editor.cursorSurroundingLines": 8,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.callArgumentNames": true,
+	"python.analysis.inlayHints.pytestParameters": true,
+	"python.analysis.typeCheckingMode": "basic",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["<ctrl+e>"],
-            "after": ["$"]
+            "after": ["$"],
         },
         {
             "before": ["<leader>", "p", "v"],
@@ -25,64 +34,90 @@
             ]
         },
         {
-            "before": ["<leader>", "g", "i"],
+            "before": ["<leader>", "p", "s"],
             "commands": [
-                "workbench.scm.focus"
+                "workbench.action.findInFiles"
             ]
         },
         {
-            "before": ["<leader>", "p", "s"],
+            "before": ["<leader>", "v", "g", "i"],
             "commands": [
-                "workbench.view.search"
+                "workbench.view.scm"
+            ]
+        },
+        {
+            "before": ["<leader>", "y"],
+            "commands": [
+                "editor.action.clipboardCopyAction",
             ]
         },
         {
             "before": ["<leader>", "t"],
             "commands": [
-                "workbench.action.terminal.focus"
-            ],
+                "workbench.action.terminal.focus",
+            ]
+        },
+        {
+            "before": ["<leader>", "m"],
+            "commands": [
+                "bookmarks.toggle"
+            ]
+        },
+        {
+            "before": ["<leader>", "b", "b"],
+            "commands": [
+                "bookmarks.list"
+            ]
+        },
+        {
+            "before": ["<leader>", "b", "h"],
+            "commands": [
+                "bookmarks.jumpToPrevious"
+            ]
+        },
+        {
+            "before": ["<leader>", "b", "l"],
+            "commands": [
+                "bookmarks.jumpToNext"
+            ]
         },
         {
             "before": ["g", "d"],
             "commands": [
                 "editor.action.peekDefinition"
-            ],
+            ]
         },
         {
             "before": ["K"],
             "commands": [
                 "editor.action.showDefinitionPreviewHover"
-            ],
+            ]
         },
         {
             "before": ["<leader>", "v", "w", "s"],
             "commands": [
-                "workbench.action.showAllSymbols"
-            ],
+                "outline.focus"
+            ]
         },
         {
-            "before": ["<leader>", "g", "f"],
+            "before": ["g", "h"],
             "commands": [
-               "workbench.action.navigateForward" 
-            ],
+                "workbench.action.navigateBack"
+            ]
         },
         {
-            "before": ["<leader>", "g", "b"],
+            "before": ["g", "l"],
             "commands": [
-               "workbench.action.navigateBack" 
-            ],
+                "workbench.action.navigateForward"
+            ]
         },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["<leader>", "v", "r", "r"],
+            "before": ["<leader>", "y"],
             "commands": [
-                "references-view.findReferences"
-            ],
-        },
-        {
-            "before": ["<leader>", "v", "r", "n"],
-            "commands": [
-                "editor.action.rename"
-            ],
+                "editor.action.clipboardCopyAction"
+            ]
         }
     ]
 }

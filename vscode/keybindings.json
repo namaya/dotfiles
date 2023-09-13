@@ -1,6 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
-   {
+    {
         "key": "d",
         "command": "deleteFile",
         "when": "explorerViewletFocus && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
@@ -8,7 +8,7 @@
     {
         "key": "n",
         "command": "explorer.newFile",
-        "when": "explorerViewletFocus && filesExplorerFocus && !inputFocus"
+        "when": "explorerViewletFocus && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
     },
     {
         "key": "f",
@@ -18,7 +18,7 @@
     {
         "key": "ctrl+e",
         "command": "acceptSelectedSuggestion",
-        "when": "editorTextFocus && inSnippetMode"
+        "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
     },
     // { 
     //     "key": "shift+cmd+f",
@@ -31,24 +31,9 @@
     //     "when": "workbench.scm.active && listFocus"
     // },
     {
-        "key": "shift+enter",
-        "command": "git.commitStaged",
-        "when": "sideBarFocus && workbench.scm.active && inputFocus"
-    },
-    {
-        "key": "escape",
-        "command": "workbench.view.scm",
-        "when": "sideBarFocus && workbench.scm.active && inputFocus"
-    },
-    {
-        "key": "cmd+shift+l",
-        "command": "workbench.action.focusFirstEditorGroup",
-        "when": "sideBarFocus"
-    },
-    {
-        "key": "cmd+shift+h",
-        "command": "workbench.action.focusSideBar",
-        "when": "editorTextFocus"
+        "key": "ctrl+e",
+        "command": "github.copilot.acceptPanelSolution",
+        "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && inlineSuggestionsVisible"
     },
     {
         "key": "cmd+shift+j",
@@ -62,12 +47,47 @@
     },
     {
         "key": "cmd+shift+h",
+        "command": "workbench.action.focusSideBar",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+shift+l",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "cmd+shift+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+shift+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+shift+[",
+        "command": "workbench.action.previousPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "cmd+shift+]",
+        "command": "workbench.action.nextPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "shift+space",
+        "command": "workbench.files.action.collapseExplorerFolders",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "cmd+shift+h",
         "command": "workbench.action.focusActivityBar",
         "when": "sideBarFocus"
     },
-    // { 
-    //     "key": "j",
-    //     "command": "list.scrollDown",
-    //     "when": "referenceSearchVisible"
-    // },
+    // {
+    //     "key": "ctrl+e",
+    //     "command": "acceptSelectedSuggestion",
+    //     "when": "editorTextFocus && inSnippetMode"
+    // }
 ]
