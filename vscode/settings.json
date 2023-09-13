@@ -1,0 +1,88 @@
+{
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[rust]": {
+        "editor.formatOnType": true
+    },
+    "rust-analyzer.check.noDefaultFeatures": null,
+    "rust-analyzer.cargo.buildScripts.overrideCommand": null,
+    "editor.lineNumbers": "relative",
+    "editor.cursorSurroundingLines": 8,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<ctrl+e>"],
+            "after": ["$"]
+        },
+        {
+            "before": ["<leader>", "p", "v"],
+            "commands": [
+                "workbench.files.action.focusFilesExplorer"
+            ]
+        },
+        {
+            "before": ["<leader>", "g", "i"],
+            "commands": [
+                "workbench.scm.focus"
+            ]
+        },
+        {
+            "before": ["<leader>", "p", "s"],
+            "commands": [
+                "workbench.view.search"
+            ]
+        },
+        {
+            "before": ["<leader>", "t"],
+            "commands": [
+                "workbench.action.terminal.focus"
+            ],
+        },
+        {
+            "before": ["g", "d"],
+            "commands": [
+                "editor.action.peekDefinition"
+            ],
+        },
+        {
+            "before": ["K"],
+            "commands": [
+                "editor.action.showDefinitionPreviewHover"
+            ],
+        },
+        {
+            "before": ["<leader>", "v", "w", "s"],
+            "commands": [
+                "workbench.action.showAllSymbols"
+            ],
+        },
+        {
+            "before": ["<leader>", "g", "f"],
+            "commands": [
+               "workbench.action.navigateForward" 
+            ],
+        },
+        {
+            "before": ["<leader>", "g", "b"],
+            "commands": [
+               "workbench.action.navigateBack" 
+            ],
+        },
+        {
+            "before": ["<leader>", "v", "r", "r"],
+            "commands": [
+                "references-view.findReferences"
+            ],
+        },
+        {
+            "before": ["<leader>", "v", "r", "n"],
+            "commands": [
+                "editor.action.rename"
+            ],
+        }
+    ]
+}

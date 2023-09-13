@@ -1,0 +1,73 @@
+// Place your key bindings in this file to override the defaults
+[
+   {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "explorerViewletFocus && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    },
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "f",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "acceptSelectedSuggestion",
+        "when": "editorTextFocus && inSnippetMode"
+    },
+    // { 
+    //     "key": "shift+cmd+f",
+    //     "command": "workbench.view.search",
+    //     "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+    // },
+    // {
+    //     "key": "a",
+    //     "command": "git.stage",
+    //     "when": "workbench.scm.active && listFocus"
+    // },
+    {
+        "key": "shift+enter",
+        "command": "git.commitStaged",
+        "when": "sideBarFocus && workbench.scm.active && inputFocus"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.view.scm",
+        "when": "sideBarFocus && workbench.scm.active && inputFocus"
+    },
+    {
+        "key": "cmd+shift+l",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "cmd+shift+h",
+        "command": "workbench.action.focusSideBar",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+shift+j",
+        "command": "workbench.action.focusPanel",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+shift+k",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "panelFocus"
+    },
+    {
+        "key": "cmd+shift+h",
+        "command": "workbench.action.focusActivityBar",
+        "when": "sideBarFocus"
+    },
+    // { 
+    //     "key": "j",
+    //     "command": "list.scrollDown",
+    //     "when": "referenceSearchVisible"
+    // },
+]
