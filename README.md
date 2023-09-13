@@ -3,12 +3,17 @@
 
 * Add shortcut for maximizing window -- https://apple.stackexchange.com/questions/372719/maximize-window-shortcut
 
+## Terminal
 
-## Terminal tools
+* Alacritty
+* [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+    * Menlo font
+* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+### Tools
 
 * brew
-* Alacritty
-    * Menlo font
+* skim
 * bat
 * ripgrep
 
