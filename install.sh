@@ -1,8 +1,21 @@
 
+#!/bin/bash
+set -euo pipefail
+
 echo "Installing dotfiles!"
 
-sudo apt-get update
+platform=$(uname -s)
 
-# Install oh-my-zsh
-sudo apt-get install -y curl zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+case $platform in
+    Linux*)
+        echo "Running on Linux."
+	sudo apt-get update
+	sudo apt-get install neovim tmux ripgrep
+	;;
+    Darwin*)
+        echo "Running on macOS."
+        ;;
+esac
+
+cp -r nvim/* .config/nvim
+
