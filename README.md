@@ -1,4 +1,8 @@
 
+# Dotfiles
+
+A collection of scripts and settings files to set up a computer with my programming tools.
+
 ## MacOS settings
 
 * Add shortcut for maximizing window -- https://apple.stackexchange.com/questions/372719/maximize-window-shortcut
@@ -13,10 +17,10 @@
 ### Tools
 
 * brew
-* skim
-* bat
+* [eza](https://github.com/eza-community/eza) -- A modern `ls`.
+* [bat](https://github.com/sharkdp/bat) -- A modern `cat`
+* [skim](https://github.com/lotabout/skim) -- A modern fuzzy finder.
 * ripgrep
-
 
 ## VSCode
 
