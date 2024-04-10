@@ -1,0 +1,4 @@
+
+alias ls="eza -1 --icons --git"
+alias lss="eza -l --no-permissions --no-user --no-time --git --icons"
+alias lsl="eza -lh --git --icons"
