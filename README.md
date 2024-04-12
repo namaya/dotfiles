@@ -22,17 +22,36 @@ defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 
 ## Terminal
 
-* Alacritty
-* [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-    * Menlo font
-* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-
-### Tools
-
+* Alacritty (optional)
+* Install [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+    * Install Menlo font
 * brew
+    * Install Homebrew
+    * Configure zsh completions. Add the following to the end of `~/.zshrc`
+
+    ```sh
+    fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+    autoload -Uz compinit
+    compinit
+    ```
+* Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions).
+    * Configure autosuggestions. Add the following to the end of `~/.zshrc`
+
+    ```sh
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    ```
+
+### Command-Line Tools
+
 * [eza](https://github.com/eza-community/eza) -- A modern `ls`.
 * [bat](https://github.com/sharkdp/bat) -- A modern `cat`
 * [skim](https://github.com/lotabout/skim) -- A modern fuzzy finder.
+    * Enable reverse search fuzzy finder. Add the following to `~/.zshrc`
+
+    ```sh
+    # enable skim reverse search
+    source /opt/homebrew/share/zsh/site-functions/key-bindings.zsh
+    ```
 * ripgrep
 
 ## VSCode
