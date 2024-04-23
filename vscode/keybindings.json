@@ -8,7 +8,7 @@
     {
         "key": "n",
         "command": "explorer.newFile",
-        "when": "explorerViewletFocus && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+        "when": "explorerViewletFocus && filesExplorerFocus && !inputFocus"
     },
     {
         "key": "f",
@@ -18,7 +18,7 @@
     {
         "key": "ctrl+e",
         "command": "acceptSelectedSuggestion",
-        "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+        "when": "editorTextFocus && inSnippetMode"
     },
     // { 
     //     "key": "shift+cmd+f",
@@ -31,9 +31,30 @@
     //     "when": "workbench.scm.active && listFocus"
     // },
     {
-        "key": "ctrl+e",
-        "command": "github.copilot.acceptPanelSolution",
-        "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && inlineSuggestionsVisible"
+        "key": "shift+enter",
+        "command": "git.commitStaged",
+        "when": "sideBarFocus && workbench.scm.active && inputFocus"
+    },
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.view.scm",
+                "list.focusFirst"
+            ],
+        },
+        "when": "sideBarFocus && workbench.scm.active && inputFocus"
+    },
+    {
+        "key": "cmd+shift+h",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "cmd+shift+l",
+        "command": "workbench.action.focusSideBar",
+        "when": "editorTextFocus"
     },
     {
         "key": "cmd+shift+j",
@@ -46,48 +67,67 @@
         "when": "panelFocus"
     },
     {
-        "key": "cmd+shift+h",
-        "command": "workbench.action.focusSideBar",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "cmd+shift+l",
-        "command": "workbench.action.focusFirstEditorGroup",
-        "when": "sideBarFocus"
-    },
-    {
-        "key": "cmd+shift+h",
-        "command": "workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "cmd+shift+l",
-        "command": "workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "cmd+shift+[",
-        "command": "workbench.action.previousPanelView",
-        "when": "panelFocus"
-    },
-    {
-        "key": "cmd+shift+]",
-        "command": "workbench.action.nextPanelView",
-        "when": "panelFocus"
-    },
-    {
-        "key": "shift+space",
-        "command": "workbench.files.action.collapseExplorerFolders",
-        "when": "explorerViewletFocus"
-    },
-    {
-        "key": "cmd+shift+h",
         "command": "workbench.action.focusActivityBar",
         "when": "sideBarFocus"
     },
+    {
+        "key": "shift+k",
+        "command": "workbench.action.increaseViewHeight",
+        "when": "focusedView == 'outline'"
+    },
+    {
+        "key": "j",
+        "command": "editor.action.scrollDownHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "k",
+        "command": "editor.action.scrollUpHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "cmd+shift+h",
+        "command": "togglePeekWidgetFocus",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "cmd+shift+l",
+        "command": "togglePeekWidgetFocus",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "a",
+        "command": "git.stage",
+        "when": "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    {
+        "key": "u",
+        "command": "git.unstage",
+        "when": "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "list.collapseAll",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "cmd+shift+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "cmd+shift+t",
+        "command": "workbench.action.terminal.focus",
+        "when": "terminalHasBeenCreated"
+    },
+    {
+        "key": "cmd+shift+0",
+        "command": "workbench.action.openChat.copilot",
+    }
     // {
-    //     "key": "ctrl+e",
-    //     "command": "acceptSelectedSuggestion",
-    //     "when": "editorTextFocus && inSnippetMode"
-    // }
+    //     "key": "cmd+shift+w",
+    //     "command": "workbench.action.terminal.focus",
+    //     "when": "terminalHasBeenCreated"
+    // },
 ]
