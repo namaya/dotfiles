@@ -1,31 +1,36 @@
 {
-    "terminal.integrated.inheritEnv": false,
-    "redhat.telemetry.enabled": false,
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "editor.stickyScroll.enabled": true,
-    "editor.lineNumbers": "relative",
-    "editor.cursorSurroundingLines": 8,
-    // "editor.stickyScroll.defaultModel": ,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "jupyter.widgetScriptSources": [
-        "jsdelivr.com",
-        "unpkg.com"
-    ],
+    // "C_Cpp.default.compileCommands": "/usr/bin/clang++",
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "[cpp]": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2
+    },
     "[python]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.callArgumentNames": true,
-	"python.analysis.inlayHints.pytestParameters": true,
-	"python.analysis.typeCheckingMode": "basic",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.condaPath": "/Users/namaya/mambaforge/bin/mamba",
+    "[rust]": {
+        "editor.formatOnType": true
+    },
+    "rust-analyzer.check.noDefaultFeatures": null,
+    "rust-analyzer.cargo.buildScripts.overrideCommand": null,
+    "editor.lineNumbers": "relative",
+    "editor.cursorSurroundingLines": 8,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["<ctrl+e>"],
-            "after": ["$"],
+            "after": ["$"]
         },
         {
             "before": ["<leader>", "p", "v"],
@@ -34,90 +39,128 @@
             ]
         },
         {
+            "before": ["<leader>", "g", "i"],
+            "commands": [
+                "workbench.scm.focus"
+            ]
+        },
+        {
             "before": ["<leader>", "p", "s"],
             "commands": [
-                "workbench.action.findInFiles"
-            ]
-        },
-        {
-            "before": ["<leader>", "v", "g", "i"],
-            "commands": [
-                "workbench.view.scm"
-            ]
-        },
-        {
-            "before": ["<leader>", "y"],
-            "commands": [
-                "editor.action.clipboardCopyAction",
+                "workbench.view.search"
             ]
         },
         {
             "before": ["<leader>", "t"],
             "commands": [
-                "workbench.action.terminal.focus",
-            ]
-        },
-        {
-            "before": ["<leader>", "m"],
-            "commands": [
-                "bookmarks.toggle"
-            ]
-        },
-        {
-            "before": ["<leader>", "b", "b"],
-            "commands": [
-                "bookmarks.list"
-            ]
-        },
-        {
-            "before": ["<leader>", "b", "h"],
-            "commands": [
-                "bookmarks.jumpToPrevious"
-            ]
-        },
-        {
-            "before": ["<leader>", "b", "l"],
-            "commands": [
-                "bookmarks.jumpToNext"
-            ]
+                "workbench.action.terminal.focus"
+            ],
         },
         {
             "before": ["g", "d"],
             "commands": [
+                "editor.action.revealDefinition"
+            ],
+            "when": "editorHasDefinitionProvider && editorTextFocus"
+        },
+        {
+            "before": ["g", "t"],
+            "commands": [
+                "editor.action.goToTypeDefinition"
+            ],
+            "when": "editorHasDefinitionProvider && editorTextFocus"
+        },
+        {
+            "before": ["p", "d"],
+            "commands": [
                 "editor.action.peekDefinition"
-            ]
+            ],
+            "when": "editorHasDefinitionProvider && editorTextFocus"
         },
         {
             "before": ["K"],
             "commands": [
                 "editor.action.showDefinitionPreviewHover"
-            ]
+            ],
         },
         {
-            "before": ["<leader>", "v", "w", "s"],
+            "before": ["<leader>", "w", "s"],
+            "commands": [
+                "workbench.action.showAllSymbols"
+            ],
+        },
+        {
+            "before": ["<leader>", "v", "s"],
             "commands": [
                 "outline.focus"
-            ]
+            ],
         },
         {
-            "before": ["g", "h"],
+            "before": ["g", "f"],
             "commands": [
-                "workbench.action.navigateBack"
-            ]
+               "workbench.action.navigateForward" 
+            ],
         },
         {
-            "before": ["g", "l"],
+            "before": ["g", "b"],
             "commands": [
-                "workbench.action.navigateForward"
-            ]
+               "workbench.action.navigateBack" 
+            ],
         },
+        {
+            "before": ["<leader>", "v", "r", "r"],
+            "commands": [
+                "references-view.findReferences"
+            ],
+        },
+        {
+            "before": ["<leader>", "r", "n"],
+            "commands": [
+                "editor.action.rename"
+            ],
+        },
+        {
+            "before": ["<leader>", "v", "g", "i"],
+            "commands": [
+                "workbench.view.scm"
+            ],
+        },
+        {
+            "before": ["<leader>", "e", "h"],
+            "commands": [
+                "workbench.action.moveEditorLeftInGroup"
+            ],
+        },
+        {
+            "before": ["<leader>", "e", "l"],
+            "commands": [
+                "workbench.action.moveEditorRightInGroup"
+            ],
+        },
+        {
+            "before": ["<leader>", "<leader>"],
+            "commands": [
+                "workbench.action.quickOpenPreviousRecentlyUsedEditor"
+            ],
+            "when": "!inQuickOpen"
+        },
+        // { "key": "ctrl+tab",              "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        //                              "when": "!activeEditorGroupEmpty" },
     ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<leader>", "y"],
-            "commands": [
-                "editor.action.clipboardCopyAction"
-            ]
-        }
-    ]
+    "zenMode.fullScreen": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.centerLayout": true,
+    "zenMode.hideStatusBar": true,
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+    "C_Cpp.loggingLevel": "Information",
+    "git.confirmSync": false,
+    "workbench.sideBar.location": "right",
 }
