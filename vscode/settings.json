@@ -144,6 +144,12 @@
             ],
             "when": "!inQuickOpen"
         },
+        {
+            "before": ["<leader>", "p"],
+            "commands": [
+                "workbench.panel.chat.view.copilot.focus"
+            ],
+        },
         // { "key": "ctrl+tab",              "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
         //                              "when": "!activeEditorGroupEmpty" },
     ],
