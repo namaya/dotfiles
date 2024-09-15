@@ -174,5 +174,10 @@
     "editor.fontFamily": "MesloLGS NF, Menlo, Monaco, 'Courier New', monospace",
     "redhat.telemetry.enabled": false,
     "git.openRepositoryInParentFolders": "never",
-    // "go.goroot": "/opt/homebrew/opt/go@1.21/libexec"
+    // "go.goroot": "/opt/homebrew/opt/go@1.21/libexec",
+    "cmake.pinnedCommands": [
+        "cmake.configure",
+        "cmake.build",
+        "cmake.launchTarget"
+    ],
 }
