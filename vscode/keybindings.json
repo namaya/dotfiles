@@ -77,6 +77,10 @@
         "when": "focusedView == 'outline'"
     },
     {
+        "key": "cmd+shift+c",
+        "command": "workbench.panel.chat.view.copilot.focus",
+    },
+    {
         "key": "j",
         "command": "editor.action.scrollDownHover",
         "when": "editorHoverFocused"
@@ -119,12 +123,24 @@
     {
         "key": "cmd+shift+t",
         "command": "workbench.action.terminal.focus",
-        "when": "terminalHasBeenCreated"
+        // "when": "terminalHasBeenCreated"
     },
     {
         "key": "cmd+shift+0",
         "command": "workbench.action.openChat.copilot",
-    }
+    },
+    // {
+    //     "key": "ctrl+b",
+    //     "command": "-cursorLeft"
+    // },
+    // {
+    //     "key": "ctrl+b",
+    //     "command": "-extension.vim_ctrl+b"
+    // },
+    // {
+    //     "key": "ctrl+b %",
+    //     "command": "workbench.action.splitEditor"
+    // }
     // {
     //     "key": "cmd+shift+w",
     //     "command": "workbench.action.terminal.focus",

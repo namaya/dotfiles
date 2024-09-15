@@ -96,13 +96,13 @@
             ],
         },
         {
-            "before": ["g", "f"],
+            "before": ["g", "l"],
             "commands": [
                "workbench.action.navigateForward" 
             ],
         },
         {
-            "before": ["g", "b"],
+            "before": ["g", "h"],
             "commands": [
                "workbench.action.navigateBack" 
             ],
@@ -120,7 +120,7 @@
             ],
         },
         {
-            "before": ["<leader>", "v", "g", "i"],
+            "before": ["<leader>", "g", "i"],
             "commands": [
                 "workbench.view.scm"
             ],
@@ -138,17 +138,17 @@
             ],
         },
         {
+            "before": ["<leader>", "p"],
+            "commands": [
+                "workbench.panel.chat.view.copilot.focus"
+            ],
+        },
+        {
             "before": ["<leader>", "<leader>"],
             "commands": [
                 "workbench.action.quickOpenPreviousRecentlyUsedEditor"
             ],
             "when": "!inQuickOpen"
-        },
-        {
-            "before": ["<leader>", "p"],
-            "commands": [
-                "workbench.panel.chat.view.copilot.focus"
-            ],
         },
         // { "key": "ctrl+tab",              "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
         //                              "when": "!activeEditorGroupEmpty" },
@@ -169,4 +169,10 @@
     "C_Cpp.loggingLevel": "Information",
     "git.confirmSync": false,
     "workbench.sideBar.location": "right",
+    "black-formatter.importStrategy": "fromEnvironment",
+    "githubPullRequests.terminalLinksHandler": "github",
+    "editor.fontFamily": "MesloLGS NF, Menlo, Monaco, 'Courier New', monospace",
+    "redhat.telemetry.enabled": false,
+    "git.openRepositoryInParentFolders": "never",
+    // "go.goroot": "/opt/homebrew/opt/go@1.21/libexec"
 }
