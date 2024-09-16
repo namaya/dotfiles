@@ -1,5 +1,8 @@
 // Place your key bindings in this file to override the defaults
 [
+    //
+    //    File Explorer Keybindings
+    //
     {
         "key": "d",
         "command": "deleteFile",
@@ -15,6 +18,58 @@
         "command": "explorer.newFolder",
         "when": "explorerViewletFocus && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
     },
+    //
+    //   Navigation Keybindings
+    //
+    {
+        "key": "cmd+shift+h",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "sideBarFocus && activeEditorGroupLast"
+    },
+    {
+        "key": "cmd+shift+h",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorTextFocus && !activeEditorGroup"
+    },
+    {
+        "key": "cmd+shift+l",
+        "command": "workbench.action.focusSideBar",
+        "when": "editorTextFocus && activeEditorGroupLast"
+    },
+    {
+        "key": "cmd+shift+l",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorTextFocus && !activeEditorGroupLast"
+    },
+    {
+        "key": "cmd+shift+j",
+        "command": "workbench.action.focusPanel",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+shift+k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "panelFocus"
+    },
+    {
+        "key": "cmd+shift+l",
+        "command": "workbench.action.focusActivityBar",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "cmd+shift+1",
+        "command": "runCommands",
+        "name": "Focus On First Editor in First Group",
+        "args": {
+          "commands": [
+            "workbench.action.focusActiveEditorGroup",
+            "workbench.action.firstEditorInGroup"
+          ]
+        }
+    },
+    //
+    //
+    //
     {
         "key": "ctrl+e",
         "command": "acceptSelectedSuggestion",
@@ -25,60 +80,10 @@
     //     "command": "workbench.view.search",
     //     "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
     // },
-    // {
-    //     "key": "a",
-    //     "command": "git.stage",
-    //     "when": "workbench.scm.active && listFocus"
-    // },
-    {
-        "key": "shift+enter",
-        "command": "git.commitStaged",
-        "when": "sideBarFocus && workbench.scm.active && inputFocus"
-    },
-    {
-        "key": "escape",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "workbench.view.scm",
-                "list.focusFirst"
-            ],
-        },
-        "when": "sideBarFocus && workbench.scm.active && inputFocus"
-    },
-    {
-        "key": "cmd+shift+h",
-        "command": "workbench.action.focusFirstEditorGroup",
-        "when": "sideBarFocus"
-    },
-    {
-        "key": "cmd+shift+l",
-        "command": "workbench.action.focusSideBar",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "cmd+shift+j",
-        "command": "workbench.action.focusPanel",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "cmd+shift+k",
-        "command": "workbench.action.focusFirstEditorGroup",
-        "when": "panelFocus"
-    },
-    {
-        "key": "cmd+shift+l",
-        "command": "workbench.action.focusActivityBar",
-        "when": "sideBarFocus"
-    },
     {
         "key": "shift+k",
         "command": "workbench.action.increaseViewHeight",
         "when": "focusedView == 'outline'"
-    },
-    {
-        "key": "cmd+shift+c",
-        "command": "workbench.panel.chat.view.copilot.focus",
     },
     {
         "key": "j",
@@ -100,6 +105,9 @@
         "command": "togglePeekWidgetFocus",
         "when": "inReferenceSearchEditor || referenceSearchVisible"
     },
+    //
+    //      SCM View Keybindings
+    //
     {
         "key": "a",
         "command": "git.stage",
@@ -110,6 +118,27 @@
         "command": "git.unstage",
         "when": "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
     },
+    {
+        "key": "shift+enter",
+        "command": "git.commitStaged",
+        "when": "sideBarFocus && workbench.scm.active && inputFocus"
+    },
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.view.scm",
+                "list.focusFirst"
+            ],
+        },
+        "when": "sideBarFocus && workbench.scm.active && inputFocus"
+    },
+    // {
+    //     "key": "a",
+    //     "command": "git.stage",
+    //     "when": "workbench.scm.active && listFocus"
+    // },
     {
         "key": "ctrl+l",
         "command": "list.collapseAll",
@@ -126,24 +155,39 @@
         // "when": "terminalHasBeenCreated"
     },
     {
-        "key": "cmd+shift+0",
-        "command": "workbench.action.openChat.copilot",
+        "key": "cmd+shift+c",
+        "command": "workbench.panel.chat.view.copilot.focus",
     },
-    // {
-    //     "key": "ctrl+b",
-    //     "command": "-cursorLeft"
-    // },
-    // {
-    //     "key": "ctrl+b",
-    //     "command": "-extension.vim_ctrl+b"
-    // },
-    // {
-    //     "key": "ctrl+b %",
-    //     "command": "workbench.action.splitEditor"
-    // }
-    // {
-    //     "key": "cmd+shift+w",
-    //     "command": "workbench.action.terminal.focus",
-    //     "when": "terminalHasBeenCreated"
-    // },
+    {
+        "key": "ctrl+b shift+\\",
+        "command": "workbench.action.splitEditor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.splitEditor",
+    },
+    {
+        "key": "ctrl+b -",
+        "command": "workbench.action.splitEditorDown",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+\\",
+        "command": "-workbench.action.splitEditorDown"
+    },
+    {
+        "key": "shift+cmd+h",
+        "command": "-workbench.action.replaceInFiles"
+    },
+    {
+        "key": "ctrl+b shift+\\",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    }
 ]

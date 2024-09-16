@@ -12,6 +12,9 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    "[pddl]": {
+        "editor.tabSize": 2
+    },
     "python.analysis.inlayHints.callArgumentNames": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
@@ -84,6 +87,18 @@
             ],
         },
         {
+            "before": ["M"],
+            "commands": [
+                "bookmarks.toggle"
+            ],
+        },
+        {
+            "before": ["<leader>", "l"],
+            "commands": [
+                "bookmarks.listFromAllFiles"
+            ],
+        },
+        {
             "before": ["<leader>", "w", "s"],
             "commands": [
                 "workbench.action.showAllSymbols"
@@ -146,12 +161,10 @@
         {
             "before": ["<leader>", "<leader>"],
             "commands": [
-                "workbench.action.quickOpenPreviousRecentlyUsedEditor"
+                "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
             ],
             "when": "!inQuickOpen"
         },
-        // { "key": "ctrl+tab",              "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
-        //                              "when": "!activeEditorGroupEmpty" },
     ],
     "zenMode.fullScreen": false,
     "zenMode.hideLineNumbers": false,
