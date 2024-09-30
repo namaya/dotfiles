@@ -14,15 +14,22 @@ case $platform in
         sudo apt-get install neovim tmux ripgrep
 	;;
     Darwin*)
-        echo "Running on macOS."
+        echo "Running on macos."
 
         # Install package manager
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-        brew install \
+        # Install packages
+        brew update && brew install \
             alacritty \
             neovim \
+            tmux \
+            zsh-autosuggestions \
+            jesseduffield/lazygit/lazygit \
             exa \
-            zsh-autosuggestions
+            fd \
+            ripgrep \
+            node
         ;;
 esac
 

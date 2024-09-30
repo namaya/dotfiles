@@ -9,12 +9,22 @@
 
 
 return {
-    "folke/tokyonight.nvim",
+  {
+    "catppuccin/nvim",
+    name="catppuccin",
     lazy=false,
     priority=1000,
-    opts={},
     config=function()
-        vim.cmd.colorscheme("tokyonight-storm")
+      require("catppuccin").setup {
+        background = {
+          light = "latte",
+          dark = "mocha"
+        }
+      }
+
+      vim.cmd("colorscheme catppuccin")
     end
+  },
+  { "folke/tokyonight.nvim" }
 }
 
