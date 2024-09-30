@@ -27,6 +27,7 @@ case $platform in
             zsh-autosuggestions \
             jesseduffield/lazygit/lazygit \
             exa \
+            zoxide \
             fd \
             ripgrep \
             node
