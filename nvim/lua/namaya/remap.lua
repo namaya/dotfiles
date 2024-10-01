@@ -1,7 +1,6 @@
-
--- 
+--
 -- # keymap settings
--- 
+--
 
 --
 -- ## global variables
@@ -32,9 +31,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- buffer navigation
 
-vim.keymap.set("n", "<leader><leader>", ":Telescope oldfiles<CR>")
-vim.keymap.set("n", "<Tab>", ":bnext<CR>")
-vim.keymap.set("n", "<S-Tab>", ":bprev<CR>")
+vim.keymap.set("n", "}", ":bnext<CR>")
+vim.keymap.set("n", "{", ":bprev<CR>")
 
 -- vim.keymap.set("n", "<leader>vwm", function()
 --     require("vim-with-me").StartVimWithMe()
@@ -47,10 +45,10 @@ vim.keymap.set("n", "<S-Tab>", ":bprev<CR>")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 -- vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -70,16 +68,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
--- vim.keymap.set("n", "<leader><leader>", function()
---    vim.cmd("so")
--- end)
+vim.keymap.set({ "n", "i", "v" }, "<C-w>|", ":vsplit<CR><C-w>l")
+vim.keymap.set({ "n", "i", "v" }, "<C-w>-", ":split<CR><C-w>j")
+vim.keymap.set({ "n", "i", "v" }, "<D-s>", ":w<CR>")
 
-vim.keymap.set({"n", "i", "v"}, "<C-w>|", ":vsplit<CR><C-w>l")
-vim.keymap.set({"n", "i", "v"}, "<C-w>-", ":split<CR><C-w>j")
-vim.keymap.set({"n", "i", "v"}, "<D-s>", ":w<CR>")
-vim.keymap.set({"n", "v"}, "<leader>pr", ":Telescope lsp_references<CR>")
-vim.keymap.set({"n", "v"}, "<D-C>", ":CopilotChat<CR>")
-vim.keymap.set({"n", "v"}, "<D-c>", ":CopilotChat<CR>")
 
--- vim.keymap.set({"v"}, "<D-c>", "\"+y")
-
+vim.keymap.set({"v"}, "c", "\"*y")

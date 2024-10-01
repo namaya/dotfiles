@@ -1,12 +1,16 @@
 return {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-        local builtin = require('telescope.builtin')
-        vim.keymap.set({ "n", "i", "v" }, "<D-p>", builtin.find_files, { desc = "search file names" })
-        vim.keymap.set({ "n", "v" }, "<leader>ps", builtin.live_grep, { desc = "search file contents" })
-        vim.keymap.set({ "n", "i", "v" }, "<D-o>", builtin.lsp_workspace_symbols, { desc = "search ctags" })
-        vim.keymap.set({ "n", "i", "v" }, "<D-O>", builtin.lsp_document_symbols, { desc = "search current buffer ctags" })
-    end
+  "nvim-telescope/telescope.nvim",
+  tag = "0.1.8",
+  dependencies = { 'nvim-lua/plenary.nvim' },
+  keys = {
+    { "<leader>sf",       function() require "telescope.builtin".find_files() end,            mode = { "n" },      desc = "search files" },
+    { "<leader>sp",       function() require "telescope.builtin".live_grep() end,             mode = { "n" },      desc = "search project" },
+    { "<leader>sp",       function() require "telescope.builtin".grep_string() end,           mode = { "v" },      desc = "search project" },
+    { "<leader>ss",       function() require "telescope.builtin".lsp_workspace_symbols() end, mode = { "n" },      desc = "search workspace symbols" },
+    { "<leader>sb",       function() require "telescope.builtin".lsp_document_symbols() end,  mode = { "n" },      desc = "search buffer symbols" },
+    { "<leader><leader>", function() require "telescope.builtin".oldfiles() end,              mode = { "n" },      desc = "search old files" },
+    { "gd",               function() require "telescope.builtin".lsp_definitions() end,       mode = { "n" },      desc = "goto symbol definition" },
+    { "<leader>pr",       function() require "telescope.builtin".lsp_implementations() end,   mode = { "n" },      desc = "peek references" },
+    { "<C-r>",            function() require "telescope.builtin".command_history() end,       mode = { "n", "i" }, desc = "search command history" },
+  }
 }
