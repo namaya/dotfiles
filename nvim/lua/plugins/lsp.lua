@@ -27,7 +27,7 @@ return {
             -- Golang
             lspconfig.gopls.setup {}
             
-            vim.api.create_nvim_autocmd("BufWritePre", {
+            vim.api.nvim_create_autocmd("BufWritePre", {
               pattern = "*.go",
               callback = function()
                 local params = vim.lsp.util.make_range_params()

@@ -43,3 +43,7 @@ vim.opt.statusline = "%F"
 vim.opt.startofline = false
 vim.opt.diffopt:append("vertical")
 
+vim.opt.ignorecase = true
+vim.opt.textwidth = 0
+vim.opt.wrapmargin = 0
+vim.opt.wrap = true
