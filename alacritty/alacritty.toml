@@ -1,4 +1,5 @@
-import = ["/Users/namaya/.config/alacritty/themes/themes/catppuccin_mocha.toml"]
+
+import = ["~/.config/alacritty/themes/themes/catppuccin_mocha.toml"]
 
 [font]
 size = 12.0
@@ -8,3 +9,40 @@ family = "MesloLGS NF"
 
 [env]
 term = "xterm-256color"
+
+# [[keyboard.bindings]]
+# key = "C"
+# mods = "Super"
+# action = "Copy"
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Alt"
+chars = "\u001bf"
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Alt"
+chars = "\u001bb"
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Alt"
+chars = "\u001bh"
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Alt"
+chars = "\u001bl"
+
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001b\r" # <esc><cr>
+
+[[keyboard.bindings]]
+key = "/"
+mods = "Command"
+chars = "\u001b/" # <esc><cr>
+

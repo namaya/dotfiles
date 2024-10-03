@@ -54,5 +54,4 @@ vim.keymap.set({ "n", "i", "v" }, "<C-w>|", ":vsplit<CR><C-w>l")
 vim.keymap.set({ "n", "i", "v" }, "<C-w>-", ":split<CR><C-w>j")
 vim.keymap.set({ "n", "i", "v" }, "<D-s>", ":w<CR>")
 
-
 vim.keymap.set({ "v" }, "c", "\"*y")

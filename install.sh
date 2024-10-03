@@ -1,10 +1,11 @@
 
-#!/bin/bash
+#!/bin/sh
 set -euo pipefail
 
 echo "Installing dotfiles!"
 
-platform=$(uname -s)
+readonly platform=$(uname -s)
+readonly xdg_config_home="$HOME/.config"
 
 case $platform in
     Linux*)
@@ -20,17 +21,33 @@ case $platform in
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
         # Install packages
-        brew update && brew install \
+        brew update
+        
+        brew install \
             alacritty \
-            neovim \
-            tmux \
             zsh-autosuggestions \
-            jesseduffield/lazygit/lazygit \
             exa \
             zoxide \
             fd \
             ripgrep \
+            neovim \
+            jesseduffield/lazygit/lazygit \
             node
+
+        # Install zsh
+        brew install zsh
+        cp zsh/.zshenv $HOME
+        cp -r zsh $xdg_config_home
+
+        # Install alacritty
+        brew install alacritty
+        cp -r alacritty $xdg_config_home
+
+        # Install tmux
+        brew install tmux
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        mkdir -p $xdg_config_home/tmux
+        cp tmux/tmux.conf $xdg_config_home/tmux/tmux.conf
         ;;
 esac
 

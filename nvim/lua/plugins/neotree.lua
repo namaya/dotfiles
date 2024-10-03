@@ -8,6 +8,7 @@ return {
     "MunifTanjim/nui.nvim",
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
+  lazy = false,
   init = function()
     -- open neotree when a directory is opened in neovim
     vim.api.nvim_create_autocmd('BufEnter', {
@@ -22,8 +23,10 @@ return {
     })
 
     -- keymaps
-    vim.keymap.set({ "n" }, "<leader>vp", ":Neotree position=float reveal=true reveal_force_cwd=true<CR>",
-      { desc = "view project files" })
+    vim.keymap.set("n", "<leader>vf", ":Neotree position=right reveal=true<cr>",
+      { desc = "view files" })
+    vim.keymap.set("n", "<leader>qf", ":Neotree position=float reveal=true<cr>",
+      { desc = "quick files" })
   end,
   opts = {
     window = {
@@ -39,4 +42,8 @@ return {
       hijack_netrw_behavior = "open_current"
     }
   },
+  -- keys = {
+  --   "<leader>vf", ":Neotree position=right reveal=true<cr>"
+  --   "<leader>qf", ":Neotree position=float reveal=true<cr>"
+  -- }
 }

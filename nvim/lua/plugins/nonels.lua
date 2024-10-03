@@ -16,6 +16,7 @@ return {
       sources = {
         nonels.builtins.formatting.stylua, -- lua
         nonels.builtins.formatting.black,  -- python
+        nonels.builtins.formatting.gofmt,  -- golang
       },
       -- format on save
       on_attach = function(client, bufnr)
