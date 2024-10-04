@@ -1,0 +1,8 @@
+
+[default_session]
+startup_command = "nvim -c ':Telescope find_files'"
+
+[[session]]
+name = "project-assignment-2"
+path = "~/Projects/mcso-planning-under-uncertainty/planning-assignment-2"
+startup_command = ". .venv/bin/activate && nvim -c ':Telescope find_files'"

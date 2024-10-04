@@ -20,6 +20,15 @@ key = "C"
 mods = "Super"
 action = "Copy"
 
+# control keys
+
+[[keyboard.bindings]]
+key = "S"
+mods = "Control"
+chars = "\u001b\u001bs"
+
+# alt keys
+
 [[keyboard.bindings]]
 key = "F"
 mods = "Alt"

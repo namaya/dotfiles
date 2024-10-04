@@ -17,25 +17,16 @@ case $platform in
     Darwin*)
         echo "Running on macos."
 
-        # Install package manager
+        # Install brew
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-        # Install packages
         brew update
         
-        brew install \
-            alacritty \
-            zsh-autosuggestions \
-            exa \
-            zoxide \
-            fd \
-            ripgrep \
-            neovim \
-            jesseduffield/lazygit/lazygit \
-            node
-
         # Install zsh
-        brew install zsh
+        brew install \
+            zsh \
+            zsh-autosuggestions
+
         cp zsh/.zshenv $HOME
         cp -r zsh $xdg_config_home
 
@@ -44,13 +35,32 @@ case $platform in
         cp -r alacritty $xdg_config_home
 
         # Install tmux
-        brew install tmux
+        brew install \
+            tmux \
+            arl/arl/gitmux \
+            joshmedeski/sesh/sesh
+
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         mkdir -p $xdg_config_home/tmux
         cp tmux/tmux.conf $xdg_config_home/tmux/tmux.conf
+
+        # Install essential CLI tools
+        brew install \
+            exa \
+            zoxide \
+            fd \
+            ripgrep \
+            fzf \
+            jesseduffield/lazygit/lazygit \
+            node
+
+        # Install neovim
+        brew install \
+            neovim
+
+        mkdir -p $HOME/.config/nvim
+        cp -r nvim/* $HOME/.config/nvim
+
         ;;
 esac
-
-mkdir -p $HOME/.config/nvim
-cp -r nvim/* $HOME/.config/nvim
 
