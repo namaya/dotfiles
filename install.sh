@@ -25,7 +25,8 @@ case $platform in
         # Install zsh
         brew install \
             zsh \
-            zsh-autosuggestions
+            zsh-autosuggestions \
+            starship
 
         cp zsh/.zshenv $HOME
         cp -r zsh $xdg_config_home

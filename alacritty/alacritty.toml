@@ -49,7 +49,6 @@ chars = "\u001bb"
 # mods = "Alt"
 # chars = "\u001bl"
 
-
 [[keyboard.bindings]]
 key = "Return"
 mods = "Shift"
@@ -61,6 +60,11 @@ chars = "\u001b\r" # <esc><cr>
 key = "/"
 mods = "Command"
 chars = "\u001b/"
+
+[[keyboard.bindings]]
+key = "A"
+mods = "Command"
+chars = "\u001ba"
 
 [[keyboard.bindings]]
 key = "P"
@@ -91,6 +95,11 @@ chars = "\u001bl"
 key = ";"
 mods = "Command"
 chars = "\u001b;"
+
+[[keyboard.bindings]]
+key = "W"
+mods = "Command"
+chars = "\u001bw"
 
 
 [[keyboard.bindings]]

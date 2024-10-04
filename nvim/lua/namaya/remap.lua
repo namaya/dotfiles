@@ -52,6 +52,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set({ "n", "i", "v" }, "<C-w>|", ":vsplit<CR><C-w>l")
 vim.keymap.set({ "n", "i", "v" }, "<C-w>-", ":split<CR><C-w>j")
-vim.keymap.set({ "n", "i", "v" }, "<D-s>", ":w<CR>")
+-- vim.keymap.set({ "n", "i", "v" }, "<D-s>", ":w<CR>")
+vim.keymap.set({ "n", "i", "v" }, "<M-a>", "ggVG")
 
-vim.keymap.set({ "v" }, "c", "\"*y")
+vim.keymap.set({ "v" }, "c", '"*y')
