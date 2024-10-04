@@ -19,6 +19,7 @@ defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 ```
 
 * Add shortcut for maximizing window -- https://apple.stackexchange.com/questions/372719/maximize-window-shortcut
+* TODO: Disable CMD+H in alacritty
 
 ## Terminal
 

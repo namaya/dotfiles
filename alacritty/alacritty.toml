@@ -1,5 +1,10 @@
 
-import = ["~/.config/alacritty/themes/themes/catppuccin_mocha.toml"]
+import = [
+    # "~/.config/alacritty/themes/themes/catppuccin_latte.toml",
+    # "~/.config/alacritty/themes/themes/catppuccin_frappe.toml",
+    # "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml",
+    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml",
+]
 
 [font]
 size = 12.0
@@ -10,10 +15,10 @@ family = "MesloLGS NF"
 [env]
 term = "xterm-256color"
 
-# [[keyboard.bindings]]
-# key = "C"
-# mods = "Super"
-# action = "Copy"
+[[keyboard.bindings]]
+key = "C"
+mods = "Super"
+action = "Copy"
 
 [[keyboard.bindings]]
 key = "F"
@@ -25,15 +30,15 @@ key = "B"
 mods = "Alt"
 chars = "\u001bb"
 
-[[keyboard.bindings]]
-key = "H"
-mods = "Alt"
-chars = "\u001bh"
-
-[[keyboard.bindings]]
-key = "H"
-mods = "Alt"
-chars = "\u001bl"
+# [[keyboard.bindings]]
+# key = "H"
+# mods = "Alt"
+# chars = "\u001bh"
+#
+# [[keyboard.bindings]]
+# key = "H"
+# mods = "Alt"
+# chars = "\u001bl"
 
 
 [[keyboard.bindings]]
@@ -41,8 +46,85 @@ key = "Return"
 mods = "Shift"
 chars = "\u001b\r" # <esc><cr>
 
+# command keys
+
 [[keyboard.bindings]]
 key = "/"
 mods = "Command"
-chars = "\u001b/" # <esc><cr>
+chars = "\u001b/"
 
+[[keyboard.bindings]]
+key = "P"
+mods = "Command"
+chars = "\u001bp"
+
+[[keyboard.bindings]]
+key = "J"
+mods = "Command"
+chars = "\u001bj"
+
+[[keyboard.bindings]]
+key = "K"
+mods = "Command"
+chars = "\u001bk"
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Command"
+chars = "\u001bh"
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Command"
+chars = "\u001bl"
+
+[[keyboard.bindings]]
+key = ";"
+mods = "Command"
+chars = "\u001b;"
+
+
+[[keyboard.bindings]]
+key = "1"
+mods = "Command"
+chars = "\u001b1"
+
+[[keyboard.bindings]]
+key = "2"
+mods = "Command"
+chars = "\u001b2"
+
+[[keyboard.bindings]]
+key = "3"
+mods = "Command"
+chars = "\u001b3"
+
+[[keyboard.bindings]]
+key = "4"
+mods = "Command"
+chars = "\u001b4"
+
+[[keyboard.bindings]]
+key = "5"
+mods = "Command"
+chars = "\u001b5"
+
+[[keyboard.bindings]]
+key = "6"
+mods = "Command"
+chars = "\u001b6"
+
+[[keyboard.bindings]]
+key = "7"
+mods = "Command"
+chars = "\u001b7"
+
+[[keyboard.bindings]]
+key = "8"
+mods = "Command"
+chars = "\u001b8"
+
+[[keyboard.bindings]]
+key = "9"
+mods = "Command"
+chars = "\u001b9"
