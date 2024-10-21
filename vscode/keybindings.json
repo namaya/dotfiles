@@ -18,54 +18,68 @@
         "command": "explorer.newFolder",
         "when": "explorerViewletFocus && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
     },
+    {
+        "key": "escape",
+        "command": "workbench.action.closeSidebar",
+        "when": "sideBarFocus && sideBarVisible && !inputFocus"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.closeSidebar",
+        "when": "sideBarFocus && workbench.panel.chat.view.copilot.active"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.togglePanel",
+        "when": "panelFocus && panelVisible"
+    },
+    // {
+    //     "key": "escape",
+    //     "command": "workbench.action.closeSidebar",
+    //     "when": "sideBarFocus && sideBarVisible && inputFocus"
+    // },
     //
     //   Navigation Keybindings
     //
     {
-        "key": "cmd+shift+h",
+        "key": "ctrl+h",
         "command": "workbench.action.focusFirstEditorGroup",
         "when": "sideBarFocus && activeEditorGroupLast"
     },
     {
-        "key": "cmd+shift+h",
+        "key": "ctrl+h",
         "command": "workbench.action.focusPreviousGroup",
         "when": "editorTextFocus && !activeEditorGroup"
     },
     {
-        "key": "cmd+shift+l",
+        "key": "ctrl+l",
         "command": "workbench.action.focusSideBar",
         "when": "editorTextFocus && activeEditorGroupLast"
     },
     {
-        "key": "cmd+shift+l",
+        "key": "ctrl+l",
         "command": "workbench.action.focusNextGroup",
         "when": "editorTextFocus && !activeEditorGroupLast"
     },
     {
-        "key": "cmd+shift+j",
+        "key": "ctrl+j",
         "command": "workbench.action.focusPanel",
         "when": "editorTextFocus"
     },
     {
-        "key": "cmd+shift+k",
+        "key": "ctrl+k",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "panelFocus"
     },
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "workbench.action.next",
+    //     "when": "panelFocus"
+    // },
     {
         "key": "cmd+shift+l",
         "command": "workbench.action.focusActivityBar",
         "when": "sideBarFocus"
-    },
-    {
-        "key": "cmd+shift+1",
-        "command": "runCommands",
-        "name": "Focus On First Editor in First Group",
-        "args": {
-          "commands": [
-            "workbench.action.focusActiveEditorGroup",
-            "workbench.action.firstEditorInGroup"
-          ]
-        }
     },
     //
     //
@@ -119,9 +133,41 @@
         "when": "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
     },
     {
+        "key": "x",
+        "command": "git.unstage",
+        "when": "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    {
+        "key": "c",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.scm.focus",
+                // "list.focusFirst",
+                // "inputFocus"
+            ],
+        },
+        "when": "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    { // TODO
+        "key": "P",
+        "command": "git.push",
+        "when": "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    {
         "key": "shift+enter",
         "command": "git.commitStaged",
-        "when": "sideBarFocus && workbench.scm.active && inputFocus"
+        "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && inputFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "cursorPageDown",
+        "when": "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "cursorPageUp",
+        "when": "listFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
     },
     {
         "key": "escape",
@@ -132,7 +178,7 @@
                 "list.focusFirst"
             ],
         },
-        "when": "sideBarFocus && workbench.scm.active && inputFocus"
+        "when": "sideBarFocus && activeViewlet == 'workbench.view.scm' && inputFocus"
     },
     // {
     //     "key": "a",
@@ -189,5 +235,28 @@
         "key": "cmd+\\",
         "command": "-workbench.action.terminal.split",
         "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-    }
+    },
+    {
+        "key": "ctrl+s",
+        "command": "projectManager.listProjectsNewWindow"
+    },
+    { 
+        "key": "ctrl+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    { 
+        "key": "ctrl+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    { "key": "cmd+1",                "command": "workbench.action.openEditorAtIndex1" },
+    { "key": "cmd+2",                "command": "workbench.action.openEditorAtIndex2" },
+    { "key": "cmd+3",                "command": "workbench.action.openEditorAtIndex3" },
+    { "key": "cmd+4",                "command": "workbench.action.openEditorAtIndex4" },
+    { "key": "cmd+5",                "command": "workbench.action.openEditorAtIndex5" },
+    { "key": "cmd+6",                "command": "workbench.action.openEditorAtIndex6" },
+    { "key": "cmd+7",                "command": "workbench.action.openEditorAtIndex7" },
+    { "key": "cmd+8",                "command": "workbench.action.openEditorAtIndex8" },
+    { "key": "cmd+9",                "command": "workbench.action.openEditorAtIndex9" },
 ]
